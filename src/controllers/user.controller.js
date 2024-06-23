@@ -2,7 +2,7 @@ import { create, findOne, findAll, update, remove } from "../utils/db.utils.js";
 
 export const createUsuario = async (req, res) => {
   try {
-    const usuario = await create("users", req.body);
+    const usuario = await create("usuarios", req.body);
     console.log("Usuario creado: ", usuario.insertId);
     return res.json({ message: "Usuario creado: ", usuario });
   } catch (error) {
@@ -13,7 +13,7 @@ export const createUsuario = async (req, res) => {
 
 export const getUsuarios = async (req, res) => {
   try {
-    const usuarios = await findAll("users");
+    const usuarios = await findAll("usuarios");
     console.log("Usuarios obtenidos: ", usuarios.length);
     return res.json({ usuarios });
   } catch (error) {
@@ -25,7 +25,7 @@ export const getUsuarios = async (req, res) => {
 export const getUsuario = async (req, res) => {
   try {
     const { id } = req.params;
-    const usuario = await findOne("users", `id = ?`, [id]);
+    const usuario = await findOne("usuarios", `id = ?`, [id]);
     if (usuario.length > 0) {
       console.log("Usuario obtenido: ", usuario[0].id);
     } else {
@@ -41,7 +41,7 @@ export const getUsuario = async (req, res) => {
 export const updateUsuario = async (req, res) => {
   try {
     const { id } = req.params;
-    const usuario = await update("users", `id = ?`, [id], req.body);
+    const usuario = await update("usuarios", `id = ?`, [id], req.body);
     console.log("Usuario actualizado: ", usuario.changedRows);
     return res.json({ message: "Usuario actualizado: ", usuario });
   } catch (error) {
@@ -53,7 +53,7 @@ export const updateUsuario = async (req, res) => {
 export const deleteUsuario = async (req, res) => {
   try {
     const { id } = req.params;
-    const usuario = await remove("users", `id = ?`, [id]);
+    const usuario = await remove("usuarios", `id = ?`, [id]);
     console.log("Usuario eliminado: ", usuario.affectedRows);
     return res.json({ message: "Usuario eliminado: ", usuario });
   } catch (error) {
