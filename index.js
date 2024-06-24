@@ -22,7 +22,7 @@ app.use(helmet());
 
 app.use("/api", router);
 app.use("/api", turnoRouter);
-app.use("/auth", authRouter)
+app.use("/auth", authRouter);
 
 app.use("/", (req, res) => {
   res.send("Hola Mundo!");
