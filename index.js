@@ -7,6 +7,7 @@ import router from "./src/routes/user.routes.js";
 import turnoRouter from "./src/routes/turno.routes.js";
 import UserEntity from "./src/models/user.model.js";
 import TurnosEntity from "./src/models/turno.model.js";
+import authRouter from "./src/routes/auth.routes.js";
 
 const app = Express();
 
@@ -21,6 +22,7 @@ app.use(helmet());
 
 app.use("/api", router);
 app.use("/api", turnoRouter);
+app.use("/auth", authRouter)
 
 app.use("/", (req, res) => {
   res.send("Hola Mundo!");

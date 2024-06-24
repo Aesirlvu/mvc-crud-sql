@@ -5,7 +5,6 @@ const UserEntity = async () => {
   const sql = `
     CREATE TABLE IF NOT EXISTS usuarios (
       id INT AUTO_INCREMENT,
-      usuario VARCHAR(50),
       nombre VARCHAR(50),
       apellido VARCHAR(50),
       telefono VARCHAR(10),

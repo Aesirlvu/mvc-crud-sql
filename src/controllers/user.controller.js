@@ -1,15 +1,15 @@
 import { create, findOne, findAll, update, remove } from "../utils/db.utils.js";
 
-export const createUsuario = async (req, res) => {
-  try {
-    const usuario = await create("usuarios", req.body);
-    console.log("Usuario creado: ", usuario.insertId);
-    return res.json({ message: "Usuario creado: ", usuario });
-  } catch (error) {
-    console.error("Error al crear usuario: ", error.message);
-    return res.status(400).json({ error: error.message });
-  }
-};
+// export const createUsuario = async (req, res) => {
+//   try {
+//     const usuario = await create("usuarios", req.body);
+//     console.log("Usuario creado: ", usuario.insertId);
+//     return res.json({ message: "Usuario creado: ", usuario });
+//   } catch (error) {
+//     console.error("Error al crear usuario: ", error.message);
+//     return res.status(400).json({ error: error.message });
+//   }
+// };
 
 export const getUsuarios = async (req, res) => {
   try {

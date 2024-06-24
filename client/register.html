@@ -16,7 +16,7 @@
           <div class="card shadow">
             <div class="card-body">
               <h2 class="card-title text-center mb-4">Registro de Usuario</h2>
-              <form>
+              <form id="form">
                 <div class="row mb-3">
                   <div class="col-md-6">
                     <label for="nombre" class="form-label">Nombre</label>
@@ -36,17 +36,6 @@
                       required
                     />
                   </div>
-                </div>
-                <div class="mb-3">
-                  <label for="usuario" class="form-label"
-                    >Nombre de Usuario</label
-                  >
-                  <input
-                    type="text"
-                    class="form-control"
-                    id="usuario"
-                    required
-                  />
                 </div>
                 <div class="mb-3">
                   <label for="telefono" class="form-label">Teléfono</label>
@@ -80,8 +69,20 @@
                   />
                 </div>
                 <div class="mb-3">
-                  <label for="obraSocial" class="form-label">Obra Social</label>
-                  <input type="text" class="form-control" id="obraSocial" />
+                  <div class="form-group">
+                    <label for="obraSocial" class="form-label"
+                      >Obra Social</label
+                    >
+                    <select
+                      name="obraSocial"
+                      id="obraSocial"
+                      class="form-control"
+                    >
+                      <option value="iasep">IASEP</option>
+                      <option value="osprera">OSPRERA</option>
+                      <option value="osde">OSDE</option>
+                    </select>
+                  </div>
                 </div>
                 <div class="mb-3">
                   <label for="documento" class="form-label"
